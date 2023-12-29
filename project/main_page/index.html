@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
-    
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
     <div class="log-in-form-bg" style="display: none;">
@@ -36,7 +33,6 @@
     <header>
         <img src="../images/LOGO-02 3.png" alt="redberry" style="margin-left: 72px;">
         <button id="log-in-btn">შესვლა</button>
-        <!-- <a href="../new_blog/index.html"><button style="display: none;" id="create-blog">ბლოგის შექმნა</button></a> -->
         <button onclick="location.href = '../new_blog/index.html';" style="display: none;" id="create-blog">ბლოგის შექმნა</button>
     </header>
     <main id="main-page">
@@ -53,131 +49,7 @@
             </div>
         </div>
     </main>
-    <!-- <div style="display: none;" id="blog-page">
-        <a href="../main_page/index.html" class="back-page"><img src="../images/Arrow.svg" alt="arrow"></a>
-        <div id="chosen-blog">
-            
-        </div> 
-        <div class="slider">
-            <div class="splide">
-                <div class="splide__arrows">
-                    <h2> მსგავსი სტატიები </h2>
-                </div>
-                <div class="splide__track">
-                    <div class="splide__list">
-                        <div class="splide__slide">
-                            <div class="similar-blog">
-                                <img src="../images/1.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="splide__slide">
-                            <div class="similar-blog">
-                                <img src="../images/1.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="splide__slide">
-                            <div class="similar-blog">
-                                <img src="../images/1.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="splide__slide">
-                            <div class="similar-blog">
-                                <img src="../images/1.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="splide__slide">
-                            <div class="similar-blog">
-                                <img src="../images/1.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="splide__slide">
-                            <div class="similar-blog">
-                                <img src="../images/1.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-
-    </div> -->
     
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="script.js"></script>
-    <!-- <script>
-        var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        centeredSlides: true,
-        spaceBetween: 30,
-        pagination: {
-        el: ".swiper-pagination",
-        type: "fraction",
-        },
-        navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-        },
-        });
-
-        var appendNumber = 4;
-        var prependNumber = 1;
-        document
-            .querySelector(".prepend-2-slides")
-            .addEventListener("click", function (e) {
-            e.preventDefault();
-            swiper.prependSlide([
-                '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
-                '<div class="swiper-slide">Slide ' + --prependNumber + "</div>",
-            ]);
-            });
-        document
-            .querySelector(".prepend-slide")
-            .addEventListener("click", function (e) {
-            e.preventDefault();
-            swiper.prependSlide(
-                '<div class="swiper-slide">Slide ' + --prependNumber + "</div>"
-            );
-            });
-        document
-            .querySelector(".append-slide")
-            .addEventListener("click", function (e) {
-            e.preventDefault();
-            swiper.appendSlide(
-                '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>"
-            );
-            });
-        document
-            .querySelector(".append-2-slides")
-            .addEventListener("click", function (e) {
-            e.preventDefault();
-            swiper.appendSlide([
-                '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
-                '<div class="swiper-slide">Slide ' + ++appendNumber + "</div>",
-            ]);
-            });
-    </script> -->
-    <!-- <script>
-        var splide = new Splide( '.splide', {
-        perPage: 3,
-        gap    : '2rem',
-        focus  : 0,
-        breakpoints: {
-          640: {
-            perPage: 2,
-            gap    : '.7rem',
-            height : '6rem',
-          },
-          480: {
-            perPage: 1,
-            gap    : '.7rem',
-            height : '6rem',
-          },
-        },
-      } );
-  
-        splide.mount();
-    </script> -->
 </body>
 </html>
