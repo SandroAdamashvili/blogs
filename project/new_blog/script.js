@@ -67,7 +67,6 @@ author.value = localStorage.getItem("authorValue")
 title.value = localStorage.getItem("titleValue")
 description.value = localStorage.getItem("descriptionValue")
 date.value = localStorage.getItem("dateValue")
-select.innerHTML = localStorage.getItem("selectValue")
 mail.value = localStorage.getItem("mailValue")
 file = localStorage.getItem('imageValue')
 
@@ -75,7 +74,6 @@ author.addEventListener('keyup', displayForm)
 title.addEventListener('keyup', displayForm)
 description.addEventListener('keyup', displayForm)
 date.addEventListener('input', displayForm)
-select.addEventListener('input', displayForm)
 mail.addEventListener('keyup', displayForm)
 
 function displayForm() {
@@ -84,7 +82,6 @@ function displayForm() {
     localStorage.setItem('titleValue', title.value)
     localStorage.setItem('descriptionValue', description.value)
     localStorage.setItem('dateValue', date.value)
-    localStorage.setItem('selectValue', select.innerHTML)
     localStorage.setItem('mailValue', mail.value)
 }
 
@@ -199,7 +196,6 @@ form.addEventListener('input', (e)=>{
     } else if (isValidEmail(mail.value) === false && mail.value.length > 0){
         mail.setAttribute("style", "border-color: #EA1919;")
         errorMessage.innerHTML = "მეილი უნდა მთავრდებოდეს \"redberry.ge\"-ით"
-        // postButton.setAttribute('disabled', 'true')
     }
     else {
         mail.setAttribute("style", "border-color: none;")
@@ -229,10 +225,6 @@ form.addEventListener('input', (e)=>{
     }
     
 })
-
-// const options = {day: 'numeric'}
-// let dateString = new Date().toLocaleDateString()
-// console.log(dateString)
 
 function dataURItoBlob(dataURI) {
     // convert base64 to raw binary data held in a string
@@ -271,21 +263,10 @@ if (localStorage.getItem('image') === null){
         if (file) {
             reader.readAsDataURL(file);
         }
-        // localStorage.setItem('imageValue', file)
         localStorage.setItem('uploadText', file.name)
-        // profileImage.removeAttribute('style')
         document.querySelector(".choose-image").setAttribute('style', 'display: none');
         uploadeImage.removeAttribute('style')
         uploadText.innerText = file.name;
-        // closeBtn.addEventListener('click', () => {
-        //     document.querySelector(".choose-image").removeAttribute('style');
-        //     uploadeImage.setAttribute('style', 'display: none')
-        //     file = null;
-        //     uploadText.innerText = ''
-        //     console.log(file);
-        //     console.log(uploadText.innerText);
-        //     localStorage.removeItem('imageValue');
-        // })
     })
 } else {
     document.querySelector(".choose-image").setAttribute('style', 'display: none');
@@ -311,7 +292,6 @@ profileImage.addEventListener('change', (e)=>{
     file = fileInput.files[0];
     const reader = new FileReader();
     console.log(file)
-    // localStorage.setItem('imageValue', file)
     reader.addEventListener('load', () => {
         localStorage.setItem('image', reader.result);
       });
@@ -319,7 +299,6 @@ profileImage.addEventListener('change', (e)=>{
         reader.readAsDataURL(file);
     }
     localStorage.setItem('uploadText', file.name)
-    // profileImage.removeAttribute('style')
     document.querySelector(".choose-image").setAttribute('style', 'display: none');
     uploadeImage.removeAttribute('style')
     uploadText.innerText = file.name;
@@ -333,13 +312,6 @@ profileImage.addEventListener('change', (e)=>{
         localStorage.removeItem('imageValue');
     })
 })
-
-// closeBtn.addEventListener('click', () => {
-//     document.querySelector(".choose-image").removeAttribute('style');
-//     uploadeImage.setAttribute('style', 'display: none')
-//     file = null;
-//     console.log(file);
-// })
 
 function checkWhitespace(str) { 
     return /\s/.test(str); 
@@ -356,13 +328,6 @@ function isValidEmail(inputStr) {
     const emailPattern = /^[^\s@]+@redberry\.ge$/;
     return emailPattern.test(inputStr);
 }
-
-// select.addEventListener("change", function() {
-//     // Get the selected value
-//     selectedValue = document.querySelector('.item-label');
-//     console.log("Selected Value:", selectedValue.value);
-// });
-console.log(filters);
 
 backPage.addEventListener('click', () => {
     localStorage.removeItem('isLoggedIn');
