@@ -105,7 +105,6 @@ form {
     border-radius: 12px;
     border: 1px solid #E4E3EB;
     background: #FCFCFD;
-    /* padding-left: 16px; */
 }
 
 #name:focus {
@@ -160,8 +159,6 @@ form {
 }
 
 #description {
-    /* display: flex; */
-    /* width: 100%; */
     height: 124px;
     flex-shrink: 0;
     border-radius: 12px;
@@ -169,7 +166,6 @@ form {
     background: #FCFCFD;
     overflow-wrap: break-word;
     word-break: break-all;
-    /* white-space: wrap; */
 }
 
 #description:focus {
