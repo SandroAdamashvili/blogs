@@ -107,47 +107,20 @@ fetch('https://api.blog.redberryinternship.ge/api/blogs/' + searchParams.get('id
                                         similarBlog.appendChild(similarBlogDesc);
                                         let similarBlogLink = document.createElement('a');
                                         similarBlogLink.className = 'blogLink';
-                                        // similarBlogLink.addEventListener('click', () => {
-                                        //     localStorage.setItem('itemValue', similarBlogLink.value);
-                                        // })
                                         console.log('blogs: ', i, item.id);
                                         similarBlogLink.href = `index.html?id=${item.id}`;
                                         similarBlogLink.innerHTML = 'სრულად ნახვა  <img src="../images/link-arrow.svg">';
                                         similarBlogLink.value = blogs[i].id;
                                         similarBlog.appendChild(similarBlogLink);
-                                        // similarBlogLink.addEventListener('click', () => {
-                                        //     localStorage.setItem('itemValue', similarBlogLink.value);
-                                        // })
                                         break;
                                     }
                                 }
                             })
-                            // let chooseBlog = document.querySelectorAll('.blogLink');
-                            //     chooseBlog.forEach((item) => {
-                            //         item.addEventListener('click', () => {
-                            //             console.log(item.value + ' daewira');
-                            //             localStorage.setItem('itemValue', item.value);
-                            //             location.href = 'index.html';
-                            //         })
-                            //     })
                         })
                         .then(() => {
                             var splide = new Splide( '.splide', {
                                 perPage: 3,
-                                // gap    : '32px',
                                 focus  : 0,
-                                // breakpoints: {
-                                //   640: {
-                                //     perPage: 2,
-                                //     gap    : '.7rem',
-                                //     height : '6rem',
-                                //   },
-                                //   480: {
-                                //     perPage: 1,
-                                //     gap    : '.7rem',
-                                //     height : '6rem',
-                                //   },
-                                // },
                                 } );
                             
                                 splide.mount();
@@ -172,7 +145,6 @@ submitSuccessBtn.addEventListener('click', () => {
 
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(mailInput.value)
     let formData = new FormData();
     formData.append('email', mailInput.value)
 
@@ -188,7 +160,6 @@ submitBtn.addEventListener('click', (e) => {
             logInInput.setAttribute('style', 'display: none');
             logInBtn.setAttribute('style', 'display: none');
             newBlog.removeAttribute('style');
-            // localStorage.setItem('isLoggedIn', true)
         } else {
             errorText.removeAttribute('style');
             submitBtn.removeAttribute('style');
@@ -196,7 +167,6 @@ submitBtn.addEventListener('click', (e) => {
         return res.status;
         })
         .then(data => {
-            console.log(data);
             if (data == 204) {
                 localStorage.setItem('isLoggedIn', true)
             }
